@@ -23,7 +23,7 @@ export const AuthLayout = (props: Props) => {
       <Head>
         <title>先生のための席替えアプリ</title>
       </Head>
-      <div className="flex flex-col h-screen justify-between bg-yellow-100">
+      <div className="flex flex-col h-screen justify-between">
         <Header />
         <main className="px-4 text-gray-600 flex-1 ">
           <LayoutErrorBoundary>
