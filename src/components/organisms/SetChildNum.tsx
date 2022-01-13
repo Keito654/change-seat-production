@@ -1,5 +1,3 @@
-import { useEffect, useRef } from 'react';
-
 type Props = {
   childNumState: string | undefined;
   setValue: (value: string | undefined) => void;

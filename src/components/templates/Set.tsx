@@ -66,11 +66,6 @@ const SetComponent = ({
 
   return (
     <>
-      {/* {isOpen ? (
-        <div className="absolute inset-0 bg-gray-700 w-screen h-screen opacity-50"></div>
-      ) : (
-        <div />
-      )} */}
       <div id="settingView" className="flex flex-col justify-center h-full p-2">
         <div className="flex items-center mb-1 space-x-3 lg:space-x-6 my-auto overflow-auto mx-auto border border-gray-200 h-full p-1 w-fit max-w-full ">
           {transArray(tex)}
