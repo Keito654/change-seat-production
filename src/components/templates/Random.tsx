@@ -1,35 +1,36 @@
 import { CogIcon, PlayIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
+import { useCallback } from 'react';
 
 type CharRandomProps = {
   handleRandom: (tex: (number | null)[][]) => void;
   tex: (number | null)[][];
 };
 
-const transArray = (tex: (number | null)[][]) => {
-  return tex.map((t, i) => {
-    const seat = t.map((s, i) => (
-      <div
-        className={`${
-          s === -1 ? 'bg-black' : ''
-        } border border-gray-600 w-8 h-8`}
-        key={i}
-      >
-        {s === -1 ? '' : s?.toString() ?? ''}
-      </div>
-    ));
-    return (
-      <div className="space-y-2" id={'column' + i.toString()} key={i}>
-        {seat}
-      </div>
-    );
-  });
-};
-
 const CharRandom = ({ handleRandom, tex }: CharRandomProps) => {
+  const transArray = useCallback((tex: (number | null)[][]) => {
+    return tex.map((t, i) => {
+      const seat = t.map((s, i) => (
+        <div
+          className={`${
+            s === -1 ? 'bg-black' : ''
+          } border border-gray-600 w-8 h-8`}
+          key={i}
+        >
+          {s === -1 ? '' : s?.toString() ?? ''}
+        </div>
+      ));
+      return (
+        <div className="space-y-2" id={'column' + i.toString()} key={i}>
+          {seat}
+        </div>
+      );
+    });
+  }, []);
+
   const ArrTex = transArray(tex);
 
-  const ClickRandomButton = () => {
+  const onClickRandomButton = () => {
     handleRandom(tex);
   };
 
@@ -46,7 +47,7 @@ const CharRandom = ({ handleRandom, tex }: CharRandomProps) => {
         <button
           type="button"
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-40 mx-auto"
-          onClick={ClickRandomButton}
+          onClick={onClickRandomButton}
         >
           {<PlayIcon className="h-5 w-5 inline mr-1.5" />}
           <span className="align-middle">席替え開始！</span>

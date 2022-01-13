@@ -11,4 +11,6 @@ const Template: ComponentStory<typeof SetChildNum> = (args) => (
 );
 
 export const SetChildNumStory = Template.bind({});
-SetChildNumStory.args = {};
+SetChildNumStory.args = {
+  childNumState: "1"
+};

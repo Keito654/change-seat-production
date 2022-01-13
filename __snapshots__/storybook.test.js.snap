@@ -1,0 +1,644 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Footer Footer Story 1`] = `
+<footer
+  className="mt-5 px-4 pt-2 pb-3 text-center text-gray-600 bg-gray-200"
+>
+  <small>
+    © 2021 keito654
+  </small>
+</footer>
+`;
+
+exports[`Storyshots Random/Random Char Random Page 1`] = `
+<div
+  className="h-full flex flex-col bg-white border border-gray-100 container mx-auto my-auto p-2"
+  style={
+    Object {
+      "textAlign": "center",
+    }
+  }
+>
+  <div
+    className="flex items-center space-x-3 lg:space-x-6 my-auto overflow-auto mx-auto border border-gray-200 p-1 w-fit max-w-full h-full"
+  >
+    <div
+      className="space-y-2"
+      id="column0"
+    >
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+    </div>
+    <div
+      className="space-y-2"
+      id="column1"
+    >
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+    </div>
+    <div
+      className="space-y-2"
+      id="column2"
+    >
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+    </div>
+  </div>
+  <br />
+  <div
+    className="flex flex-col"
+  >
+    <button
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-40 mx-auto"
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        className="h-5 w-5 inline mr-1.5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+        />
+        <path
+          d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+        />
+      </svg>
+      <span
+        className="align-middle"
+      >
+        席替え開始！
+      </span>
+    </button>
+    <a
+      className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-3 border border-gray-400 rounded-full mt-4 w-40 mx-auto"
+      href="/setting"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <svg
+        aria-hidden="true"
+        className="h-5 w-5 inline mr-1.5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+        />
+        <path
+          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+        />
+      </svg>
+      <span
+        className="align-middle"
+      >
+        席の設定に移動
+      </span>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Random/Random Include Null 1`] = `
+<div
+  className="h-full flex flex-col bg-white border border-gray-100 container mx-auto my-auto p-2"
+  style={
+    Object {
+      "textAlign": "center",
+    }
+  }
+>
+  <div
+    className="flex items-center space-x-3 lg:space-x-6 my-auto overflow-auto mx-auto border border-gray-200 p-1 w-fit max-w-full h-full"
+  >
+    <div
+      className="space-y-2"
+      id="column0"
+    >
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+    </div>
+    <div
+      className="space-y-2"
+      id="column1"
+    >
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+    </div>
+    <div
+      className="space-y-2"
+      id="column2"
+    >
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+      >
+        
+      </div>
+    </div>
+  </div>
+  <br />
+  <div
+    className="flex flex-col"
+  >
+    <button
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-40 mx-auto"
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        className="h-5 w-5 inline mr-1.5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+        />
+        <path
+          d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+        />
+      </svg>
+      <span
+        className="align-middle"
+      >
+        席替え開始！
+      </span>
+    </button>
+    <a
+      className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-3 border border-gray-400 rounded-full mt-4 w-40 mx-auto"
+      href="/setting"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <svg
+        aria-hidden="true"
+        className="h-5 w-5 inline mr-1.5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+        />
+        <path
+          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+        />
+      </svg>
+      <span
+        className="align-middle"
+      >
+        席の設定に移動
+      </span>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Set/SetChildNum Set Child Num Story 1`] = `
+<div
+  className="h-full flex flex-col"
+  style={
+    Object {
+      "textAlign": "center",
+    }
+  }
+>
+  <div
+    className="my-auto"
+  >
+    <label
+      htmlFor="num"
+    >
+      児童・生徒の人数
+    </label>
+    <input
+      className="appearance-none block w-32 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mx-auto mt-3 "
+      id="num"
+      min={1}
+      onChange={[Function]}
+      type="number"
+      value="1"
+    />
+    <p
+      className="mt-8 container mx-auto"
+    >
+      出席番号の最大の数を入力してください。入力すると１～入力した数まで欠番なく児童・生徒がいると認識されます。
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Set/Setting Set Component Page 1`] = `
+<div
+  className="flex flex-col justify-center h-full p-2"
+  id="settingView"
+>
+  <div
+    className="flex items-center mb-1 space-x-3 lg:space-x-6 my-auto overflow-auto mx-auto border border-gray-200 h-full p-1 w-fit max-w-full "
+  >
+    <div
+      className="space-y-2"
+      id="column0"
+    >
+      <div
+        className=" border border-gray-600 w-8 h-8"
+        data-place="0,0"
+        data-value="1"
+        onClick={[Function]}
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+        data-place="0,1"
+        data-value="1"
+        onClick={[Function]}
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+        data-place="0,2"
+        data-value="1"
+        onClick={[Function]}
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        1
+      </div>
+    </div>
+    <div
+      className="space-y-2"
+      id="column1"
+    >
+      <div
+        className=" border border-gray-600 w-8 h-8"
+        data-place="1,0"
+        data-value="1"
+        onClick={[Function]}
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+        data-place="1,1"
+        data-value="1"
+        onClick={[Function]}
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+        data-place="1,2"
+        data-value="1"
+        onClick={[Function]}
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        1
+      </div>
+    </div>
+    <div
+      className="space-y-2"
+      id="column2"
+    >
+      <div
+        className=" border border-gray-600 w-8 h-8"
+        data-place="2,0"
+        data-value="1"
+        onClick={[Function]}
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+        data-place="2,1"
+        data-value="1"
+        onClick={[Function]}
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        1
+      </div>
+      <div
+        className=" border border-gray-600 w-8 h-8"
+        data-place="2,2"
+        data-value="1"
+        onClick={[Function]}
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        1
+      </div>
+    </div>
+  </div>
+  <div
+    className="flex flex-col w-full mx-auto mt-auto mb-5"
+    id="controlbutton"
+  >
+    <div
+      className="mt-1 mx-3"
+      id="numView"
+    >
+      <div
+        className="text-blue-700"
+      >
+        現在の席数:9　
+      </div>
+      <div>
+        児童・生徒の人数:1
+      </div>
+    </div>
+    <div
+      className=" bottom-auto flex justify-center space-x-5 border-t-2 mx-3 mt-4 pt-4"
+    >
+      <div
+        className="flex flex-col justify-center space-y-1"
+      >
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold px-3 py-3 h-10 w-10 rounded"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clipRule="evenodd"
+              d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-3 h-10 w-10 rounded"
+          style={
+            Object {
+              "marginLeft": 0,
+            }
+          }
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clipRule="evenodd"
+              d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="flex justify-center space-x-1 items-center"
+      >
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-3 h-10 w-10 rounded"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clipRule="evenodd"
+              d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-3 h-10 w-10 rounded"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clipRule="evenodd"
+              d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      className="flex justify-center mt-10"
+    >
+      <button
+        className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
+        onClick={[Function]}
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          className="h-5 w-5 inline mr-1.5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 13l4 4L19 7"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+          />
+        </svg>
+        <span
+          className="align-middle"
+        >
+          設定を終了
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
