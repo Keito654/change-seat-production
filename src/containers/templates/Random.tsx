@@ -18,10 +18,15 @@ const CharRandomContainer: FC = () => {
         .eq('user_id', user_id);
       if (error) console.log(error);
       if (data?.length !== 0 && data !== null) {
-        const arr = data[0]['seat_array']['array'];
+        const arr: (number | null)[][] = data[0]['seat_array']['array'];
         setSettedTex(arr);
         setChildNum(data[0]['children_num']);
-        setTex(Array(arr.length).fill(Array(arr[0].length).fill(null)));
+        //setTex(Array(arr.length).fill(Array(arr[0].length).fill(null)));
+        setTex(
+          arr.map((one) => {
+            return one.map((two) => (two === -1 ? -1 : null));
+          }),
+        );
       }
     };
     void dataFetch();
@@ -39,7 +44,6 @@ const CharRandomContainer: FC = () => {
           array.push(i);
         }
       }
-      console.log(array);
       for (let i = array.length - 1; i >= 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
@@ -57,7 +61,7 @@ const CharRandomContainer: FC = () => {
           const randomText = () => {
             // 配列の数字をランダムに変化させる
             const text = texState.map((t) =>
-              t.map((_) => Math.floor(Math.random() * 10)),
+              t.map((s) => (s === -1 ? s : Math.floor(Math.random() * 10))),
             );
             setTex(text);
             count += 1;
