@@ -21,7 +21,6 @@ const CharRandomContainer: FC = () => {
         const arr: (number | null)[][] = data[0]['seat_array']['array'];
         setSettedTex(arr);
         setChildNum(data[0]['children_num']);
-        //setTex(Array(arr.length).fill(Array(arr[0].length).fill(null)));
         setTex(
           arr.map((one) => {
             return one.map((two) => (two === -1 ? -1 : null));

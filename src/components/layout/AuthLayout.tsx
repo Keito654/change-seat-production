@@ -17,14 +17,15 @@ export const AuthUserContext = createContext<string | null>(null);
 export const AuthLayout = (props: Props) => {
   const { user } = Auth.useUser();
   const router = useRouter();
+  console.log(user?.id);
 
   return (
     <>
       <Head>
         <title>先生のための席替えアプリ</title>
-      </Head>
+      </Head >
       <div className="flex flex-col h-screen justify-between">
-        <Header />
+        <Header user_id={user?.id}/>
         <main className="px-4 text-gray-600 flex-1 ">
           <LayoutErrorBoundary>
             {user ? (

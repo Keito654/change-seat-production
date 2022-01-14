@@ -30,9 +30,9 @@ const CharRandom = ({ handleRandom, tex }: CharRandomProps) => {
 
   const ArrTex = transArray(tex);
 
-  const onClickRandomButton = () => {
-    handleRandom(tex);
-  };
+  // const onClickRandomButton = () => {
+  //   handleRandom(tex);
+  // };
 
   return (
     <div
@@ -47,7 +47,7 @@ const CharRandom = ({ handleRandom, tex }: CharRandomProps) => {
         <button
           type="button"
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-40 mx-auto"
-          onClick={onClickRandomButton}
+          onClick={() => handleRandom(tex)}
         >
           {<PlayIcon className="h-5 w-5 inline mr-1.5" />}
           <span className="align-middle">席替え開始！</span>
