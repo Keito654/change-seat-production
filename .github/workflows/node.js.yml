@@ -28,3 +28,5 @@ jobs:
         cache: 'yarn'
     - run: yarn install --frozen-lockfile
     - run: yarn test
+      env: 
+        NEXT_PUBLIC_SUPABASE_KEY: test
