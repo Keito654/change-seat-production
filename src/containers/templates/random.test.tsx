@@ -1,13 +1,30 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
+import * as useFetchData from '../../hooks/useFetchData';
 import CharRandomContainer from 'src/containers/templates/Random';
 
-// describe('ランダムに画面が変化したあと設定した番号を表示する', () => {
-//   afterEach(cleanup);
+const mockFetch = jest.spyOn(useFetchData, 'useFetchData');
 
-//   it('開始ボタンを押すと変化後設定したものになる', () => {
-//     render(<CharRandomContainer />);
+describe('ランダムに画面が変化したあと設定した番号を表示する', () => {
+  afterEach(cleanup);
 
-//     screen.debug();
-//   });
-// });
+  beforeEach(() => {
+    mockFetch.mockImplementation(() => ({
+            settedPosition: [
+              [1, 1, 1],
+              [1, 1, 1],
+            ],
+            childNum: 4,
+            position: [
+              [null, null, null],
+              [null, null, null],
+            ],
+    }));
+  });
+
+  it('開始ボタンを押すと変化後設定したものになる', () => {
+    render(<CharRandomContainer />);
+
+    screen.debug();
+  });
+});

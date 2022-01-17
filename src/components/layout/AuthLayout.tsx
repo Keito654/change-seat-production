@@ -17,7 +17,6 @@ export const AuthUserContext = createContext<string | null>(null);
 export const AuthLayout = (props: Props) => {
   const { user } = Auth.useUser();
   const router = useRouter();
-  console.log(user?.id);
 
   return (
     <>
@@ -29,7 +28,7 @@ export const AuthLayout = (props: Props) => {
         <main className="px-4 text-gray-600 flex-1 ">
           <LayoutErrorBoundary>
             {user ? (
-              <AuthUserContext.Provider value={user.id}>
+              <AuthUserContext.Provider value={user?.id}>
                 {props.children}
               </AuthUserContext.Provider>
             ) : router.pathname === '/usage' || router.pathname === '/about' ? (

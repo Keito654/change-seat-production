@@ -9,19 +9,19 @@ type Props = {
 };
 
 const SetContainer = ({ arrayNumProps }: Props) => {
-  const [tex, setTex] = useState<(number | null)[][]>([[null]]);
+  const [position, setPosition] = useState<(number | null)[][]>([[null]]);
   const user_id = useContext(AuthUserContext);
   const router = useRouter();
 
   const HandleRowAdd = useCallback(() => {
-    setTex((pre) => {
+    setPosition((pre) => {
       const addArray = Array<number | null>(pre[0].length).fill(null);
       return [...pre, addArray];
     });
   }, []);
 
   const HandleColumnAdd = useCallback(() => {
-    setTex((pre) => {
+    setPosition((pre) => {
       return pre.map((one) => {
         return [...one, null];
       });
@@ -29,7 +29,7 @@ const SetContainer = ({ arrayNumProps }: Props) => {
   }, []);
 
   const HandleRowDec = useCallback(() => {
-    setTex((pre) => {
+    setPosition((pre) => {
       if (pre.length <= 1) {
         return pre;
       }
@@ -38,7 +38,7 @@ const SetContainer = ({ arrayNumProps }: Props) => {
   }, []);
 
   const HandleColumnDec = useCallback(() => {
-    setTex((pre) => {
+    setPosition((pre) => {
       if (pre[0].length <= 1) {
         return pre;
       }
@@ -48,7 +48,7 @@ const SetContainer = ({ arrayNumProps }: Props) => {
 
   const changeSeatNum = useCallback(
     ([row, col]: number[], inputNum: number | null) => {
-      setTex((pre) => {
+      setPosition((pre) => {
         const preSlice = pre.slice();
         preSlice[row][col] = inputNum;
         return preSlice;
@@ -58,7 +58,7 @@ const SetContainer = ({ arrayNumProps }: Props) => {
   );
 
   const handleSave = useCallback(
-    async (tex: (number | null)[][], childNum: number) => {
+    async (position: (number | null)[][], childNum: number) => {
       let { data, error } = await client
         .from('change_seat')
         .select('user_id')
@@ -67,7 +67,7 @@ const SetContainer = ({ arrayNumProps }: Props) => {
         ({ data, error } = await client
           .from('change_seat')
           .update({
-            seat_array: { array: tex },
+            seat_array: { array: position },
             children_num: childNum,
           })
           .match({ user_id: user_id }));
@@ -76,7 +76,7 @@ const SetContainer = ({ arrayNumProps }: Props) => {
       } else if (data.length === 0 || !data) {
         ({ data, error } = await client.from('change_seat').upsert({
           user_id: user_id,
-          seat_array: { array: tex },
+          seat_array: { array: position },
           children_num: childNum,
         }));
         if (error) console.log(error);
@@ -91,7 +91,7 @@ const SetContainer = ({ arrayNumProps }: Props) => {
   return (
     <SetComponent
       {...{
-        tex,
+        position,
         changeSeatNum,
         HandleColumnAdd,
         HandleRowAdd,
