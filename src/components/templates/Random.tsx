@@ -3,13 +3,13 @@ import Link from 'next/link';
 import { useCallback } from 'react';
 
 type CharRandomProps = {
-  handleRandom: (tex: (number | null)[][]) => void;
-  tex: (number | null)[][];
+  handleRandom: (position: (number | null)[][]) => void;
+  position: (number | null)[][];
 };
 
-const CharRandom = ({ handleRandom, tex }: CharRandomProps) => {
-  const transArray = useCallback((tex: (number | null)[][]) => {
-    return tex.map((t, i) => {
+const CharRandom = ({ handleRandom, position }: CharRandomProps) => {
+  const transArray = useCallback((position: (number | null)[][]) => {
+    return position.map((t, i) => {
       const seat = t.map((s, i) => (
         <div
           className={`${
@@ -28,11 +28,7 @@ const CharRandom = ({ handleRandom, tex }: CharRandomProps) => {
     });
   }, []);
 
-  const ArrTex = transArray(tex);
-
-  const onClickRandomButton = () => {
-    handleRandom(tex);
-  };
+  const ArrPosition = transArray(position);
 
   return (
     <div
@@ -40,14 +36,14 @@ const CharRandom = ({ handleRandom, tex }: CharRandomProps) => {
       className="h-full flex flex-col bg-white border border-gray-100 container mx-auto my-auto p-2"
     >
       <div className="flex items-center space-x-3 lg:space-x-6 my-auto overflow-auto mx-auto border border-gray-200  p-1 w-fit max-w-full h-full">
-        {ArrTex}
+        {ArrPosition}
       </div>
       <br />
       <div className="flex flex-col">
         <button
           type="button"
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-40 mx-auto"
-          onClick={onClickRandomButton}
+          onClick={() => handleRandom(position)}
         >
           {<PlayIcon className="h-5 w-5 inline mr-1.5" />}
           <span className="align-middle">席替え開始！</span>

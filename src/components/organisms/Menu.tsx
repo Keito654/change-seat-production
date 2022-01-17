@@ -7,10 +7,10 @@ import { client } from 'src/libs/supabase';
 type Props = {
   open: boolean;
   setOpen: (isOpne: boolean) => void;
-  user: any;
+  user_id: string | undefined;
 };
 
-const MenuList = ({ open, setOpen, user }: Props) => {
+const MenuList = ({ open, setOpen, user_id }: Props) => {
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog
@@ -69,7 +69,7 @@ const MenuList = ({ open, setOpen, user }: Props) => {
                   </div>
                   <div className="mt-6 relative flex-1 px-4 sm:px-6 flex flex-col space-y-5">
                     {/* Replace with your content */}
-                    {user ? (
+                    {user_id ? (
                       <>
                         <Link href="/about">
                           <a

@@ -22,13 +22,13 @@ export const AuthLayout = (props: Props) => {
     <>
       <Head>
         <title>先生のための席替えアプリ</title>
-      </Head>
+      </Head >
       <div className="flex flex-col h-screen justify-between">
-        <Header />
+        <Header user_id={user?.id}/>
         <main className="px-4 text-gray-600 flex-1 ">
           <LayoutErrorBoundary>
             {user ? (
-              <AuthUserContext.Provider value={user.id}>
+              <AuthUserContext.Provider value={user?.id}>
                 {props.children}
               </AuthUserContext.Provider>
             ) : router.pathname === '/usage' || router.pathname === '/about' ? (

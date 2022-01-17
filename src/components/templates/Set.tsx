@@ -4,18 +4,18 @@ import { MinusIcon, PlusIcon } from '@heroicons/react/solid';
 import { useCallback, useRef, useState } from 'react';
 
 type Props = {
-  tex: (number | null)[][];
+  position: (number | null)[][];
   changeSeatNum: ([row, col]: number[], inputNum: number | null) => void;
   HandleRowAdd: () => void;
   HandleRowDec: () => void;
   HandleColumnAdd: () => void;
   HandleColumnDec: () => void;
   arrayNumProps: number;
-  handleSave: (tex: (number | null)[][], childNum: number) => Promise<void>;
+  handleSave: (position: (number | null)[][], childNum: number) => Promise<void>;
 };
 
 const SetComponent = ({
-  tex,
+  position,
   changeSeatNum,
   HandleRowAdd,
   HandleColumnDec,
@@ -31,8 +31,8 @@ const SetComponent = ({
   const [notUseSeatNum, setnotUseSeatNum] = useState(0);
   const inputChildNum = useRef(null);
 
-  const transArray = useCallback((tex: (number | null)[][]) => {
-    return tex.map((t, i) => {
+  const transArray = useCallback((position: (number | null)[][]) => {
+    return position.map((t, i) => {
       const row = i;
       const seat = t.map((s, i) => {
         const col = i;
@@ -68,7 +68,7 @@ const SetComponent = ({
     <>
       <div id="settingView" className="flex flex-col justify-center h-full p-2">
         <div className="flex items-center mb-1 space-x-3 lg:space-x-6 my-auto overflow-auto mx-auto border border-gray-200 h-full p-1 w-fit max-w-full ">
-          {transArray(tex)}
+          {transArray(position)}
         </div>
 
         <div
@@ -78,12 +78,12 @@ const SetComponent = ({
           <div className="mt-1 mx-3" id="numView">
             <div
               className={
-                tex.length * tex[0].length - notUseSeatNum - arrayNumProps >= 0
+                position.length * position[0].length - notUseSeatNum - arrayNumProps >= 0
                   ? 'text-blue-700'
                   : 'text-red-600'
               }
-            >{`現在の席数:${tex.length * tex[0].length - notUseSeatNum}　${
-              tex.length * tex[0].length - notUseSeatNum - arrayNumProps >= 0
+            >{`現在の席数:${position.length * position[0].length - notUseSeatNum}　${
+              position.length * position[0].length - notUseSeatNum - arrayNumProps >= 0
                 ? ''
                 : '席数が設定された人数を下回っています。'
             }`}</div>
@@ -130,7 +130,7 @@ const SetComponent = ({
               type="button"
               className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
               onClick={() => {
-                handleSave(tex, arrayNumProps);
+                handleSave(position, arrayNumProps);
               }}
             >
               {<CheckIcon className="h-5 w-5 inline mr-1.5" />}

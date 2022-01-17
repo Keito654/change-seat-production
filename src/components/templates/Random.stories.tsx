@@ -14,31 +14,15 @@ const Template: ComponentStory<typeof CharRandom> = (args) => (
 export const CharRandomPage = Template.bind({});
 CharRandomPage.args = {
   handleRandom: (
-    tex = [
+    position = [
       [1, 1, 1, 1],
       [1, 1, 1, 1],
       [1, 1, 1, 1],
     ],
   ) => {},
-  tex: [
+  position: [
     [1, 1, 1, 1],
     [1, 1, 1, 1],
     [1, 1, 1, 1],
-  ],
-};
-
-export const IncludeNull = Template.bind({});
-IncludeNull.args = {
-  handleRandom: (
-    tex = [
-      [1, 1, 1, 1],
-      [1, 1, 1, 1],
-      [1, 1, 1, 1],
-    ],
-  ) => {},
-  tex: [
-    [null, 1, 1, 1],
-    [1, null, 1, 1],
-    [1, 1, 1, null],
   ],
 };

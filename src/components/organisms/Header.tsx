@@ -1,13 +1,15 @@
 import { MenuIcon, LogoutIcon, SupportIcon } from '@heroicons/react/outline';
-import { Auth } from '@supabase/ui';
 import Link from 'next/link';
 import { useState } from 'react';
 import MenuList from 'src/components/organisms/Menu';
 import { getWindowSize } from 'src/libs/GetWindowSize';
 import { client } from 'src/libs/supabase';
 
-export const Header = () => {
-  const { user } = Auth.useUser();
+type Props = {
+  user_id: string | undefined;
+};
+
+export const Header = ({ user_id }: Props) => {
   const [open, setOpen] = useState(false);
   const { width } = getWindowSize();
 
@@ -25,7 +27,7 @@ export const Header = () => {
             </a>
           </Link>
           <div className="flex justify-end mx-2 my-3">
-            {user ? (
+            {user_id ? (
               width >= 1024 ? (
                 <>
                   <Link href="/about">
@@ -80,7 +82,7 @@ export const Header = () => {
         </div>
       </header>
 
-      <MenuList {...{ open, setOpen, user}} />
+      <MenuList {...{ open, setOpen, user_id }} />
     </>
   );
 };

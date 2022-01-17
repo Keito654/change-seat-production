@@ -11,7 +11,7 @@ const Template: ComponentStory<typeof SetComponent> = (args) => (
 );
 export const SetComponentPage = Template.bind({});
 SetComponentPage.args = {
-  tex: [
+  position: [
     [1, 1, 1],
     [1, 1, 1],
     [1, 1, 1],
