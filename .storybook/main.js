@@ -13,7 +13,6 @@ module.exports = {
         },
       },
     },
-    '@storybook/addon-interactions',
   ],
   webpackFinal: async (baseConfig) => {
     baseConfig.resolve.modules = [
