@@ -13,20 +13,26 @@ describe('ランダムに画面が変化したあと設定した番号を表示�
 
   beforeEach(() => {
     mockFetch.mockImplementation(() => ({
-            settedPosition: [
-              [1, 1, 1],
-              [1, 1, 1],
-            ],
-            childNum: 4,
-            position: [
-              [null, null, null],
-              [null, null, null],
-            ],
+      settedPosition: Array(2).fill(Array(3).fill(1)),
+      childNum: 6,
+      position: Array(2).fill([-1, null, null]),
     }));
   });
 
-  it('開始ボタンを押すと変化後設定したものになる', () => {
-    
-    expect(1).toBe(1);
+  it('レンダリング時は全て空白', () => {
+    const { getAllByTestId } = render(<CharRandomContainer testing={true} />);
+    getAllByTestId('seat-element').map((element) => {
+      expect(element.textContent).toBe('');
+    });
+  });
+
+  it('開始ボタンを押すとsettedPositionの値になる', async () => {
+    const { getByText, getAllByTestId } = render(
+      <CharRandomContainer testing={true} />,
+    );
+    await fireEvent.click(getByText('席替え開始！'));
+    getAllByTestId('seat-element').map((element) => {
+      expect(element.textContent).toBe('1');
+    });
   });
 });

@@ -106,21 +106,25 @@ exports[`Storyshots Random/Random Char Random Page 1`] = `
     >
       <div
         class=" border border-gray-600 w-8 h-8"
+        data-testid="seat-element"
       >
         1
       </div>
       <div
         class=" border border-gray-600 w-8 h-8"
+        data-testid="seat-element"
       >
         1
       </div>
       <div
         class=" border border-gray-600 w-8 h-8"
+        data-testid="seat-element"
       >
         1
       </div>
       <div
         class=" border border-gray-600 w-8 h-8"
+        data-testid="seat-element"
       >
         1
       </div>
@@ -131,21 +135,25 @@ exports[`Storyshots Random/Random Char Random Page 1`] = `
     >
       <div
         class=" border border-gray-600 w-8 h-8"
+        data-testid="seat-element"
       >
         1
       </div>
       <div
         class=" border border-gray-600 w-8 h-8"
+        data-testid="seat-element"
       >
         1
       </div>
       <div
         class=" border border-gray-600 w-8 h-8"
+        data-testid="seat-element"
       >
         1
       </div>
       <div
         class=" border border-gray-600 w-8 h-8"
+        data-testid="seat-element"
       >
         1
       </div>
@@ -156,21 +164,25 @@ exports[`Storyshots Random/Random Char Random Page 1`] = `
     >
       <div
         class=" border border-gray-600 w-8 h-8"
+        data-testid="seat-element"
       >
         1
       </div>
       <div
         class=" border border-gray-600 w-8 h-8"
+        data-testid="seat-element"
       >
         1
       </div>
       <div
         class=" border border-gray-600 w-8 h-8"
+        data-testid="seat-element"
       >
         1
       </div>
       <div
         class=" border border-gray-600 w-8 h-8"
+        data-testid="seat-element"
       >
         1
       </div>

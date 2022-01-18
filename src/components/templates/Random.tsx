@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useCallback } from 'react';
 
 type CharRandomProps = {
-  handleRandom: (position: (number | null)[][]) => void;
+  handleRandom?: any;
   position: (number | null)[][];
 };
 
@@ -16,6 +16,7 @@ const CharRandom = ({ handleRandom, position }: CharRandomProps) => {
             s === -1 ? 'bg-black' : ''
           } border border-gray-600 w-8 h-8`}
           key={i}
+          data-testid="seat-element"
         >
           {s === -1 ? '' : s?.toString() ?? ''}
         </div>
@@ -43,7 +44,7 @@ const CharRandom = ({ handleRandom, position }: CharRandomProps) => {
         <button
           type="button"
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-40 mx-auto"
-          onClick={() => handleRandom(position)}
+          onClick={handleRandom}
         >
           {<PlayIcon className="h-5 w-5 inline mr-1.5" />}
           <span className="align-middle">席替え開始！</span>

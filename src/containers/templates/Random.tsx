@@ -1,32 +1,52 @@
-import { FC, useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import CharRandom from 'src/components/templates/Random';
-import {useFetchData} from 'src/hooks/useFetchData';
+import { useFetchData } from 'src/hooks/useFetchData';
 
-const CharRandomContainer: FC = () => {
+type Props = {
+  testing: boolean;
+}
+
+const CharRandomContainer = ({testing = false}: Props) => {
   const { settedPosition, childNum, position } = useFetchData();
   const [positiontest, setpositiontest] = useState(position);
 
   useEffect(() => {
     return setpositiontest(position);
-  }, [position]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [(testing ? '': position)]);
 
   // 数字を渡し、それ以下の数値かつsettedTexにない数字全てで構成された配列を生成、順番をランダムにする
   // nullにはこの値を順番に渡していく
-  const shuffle = useCallback((num: number, settedPosition) => {
-    const array: number[] = [];
-    for (let i = 1; i <= num; i++) {
-      if (settedPosition.flat().includes(i)) {
-        continue;
-      } else {
-        array.push(i);
+  const result = useCallback(() => {
+    const shuffle = (num: number, settedPosition: (number | null)[][]) => {
+      const array: number[] = [];
+      for (let i = 1; i <= num; i++) {
+        if (settedPosition.flat().includes(i)) {
+          continue;
+        } else {
+          array.push(i);
+        }
       }
-    }
-    for (let i = array.length - 1; i >= 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }, []);
+      for (let i = array.length - 1; i >= 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    };
+
+    // 最終的に表示する配列
+    const userRandomArr = shuffle(childNum, settedPosition);
+    const useArr = settedPosition.map((one) => {
+      return one.map((two) => {
+        return two === null ? userRandomArr?.shift() : two;
+      });
+    });
+    setpositiontest(
+      useArr.map((one) => {
+        return one.map((two) => (two === undefined ? null : two));
+      }),
+    );
+  }, [childNum, settedPosition]);
 
   const handleRondom = useCallback(
     (positionState: (number | null)[][]) => {
@@ -50,26 +70,12 @@ const CharRandomContainer: FC = () => {
           const interval = setInterval(randomNumber, 100);
         });
 
-      void randomPromise().then(() => {
-        // 最終的に表示する配列
-        const userRandomArr = shuffle(childNum, settedPosition);
-        console.log(userRandomArr);
-        const useArr = settedPosition.map((one) => {
-          return one.map((two) => {
-            return two === null ? userRandomArr?.shift() : two;
-          });
-        });
-        setpositiontest(
-          useArr.map((one) => {
-            return one.map((two) => (two === undefined ? null : two));
-          }),
-        );
-      });
+      void randomPromise().then(result);
     },
-    [childNum, setpositiontest, settedPosition, shuffle],
+    [result],
   );
 
-  return <CharRandom handleRandom={handleRondom} position={positiontest} />;
+  return <CharRandom handleRandom={() => testing ? result() :  handleRondom(positiontest)} position={positiontest} />;
 };
 
 export default CharRandomContainer;
