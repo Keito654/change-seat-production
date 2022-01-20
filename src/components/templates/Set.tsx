@@ -43,6 +43,7 @@ const SetComponent = ({
             } border border-gray-600 w-8 h-8`}
             key={i}
             style={{ textAlign: 'center' }}
+            data-testid="set-element"
             data-place={`${row},${col}`}
             data-value={s?.toString()}
             onClick={(e) => {
@@ -195,6 +196,7 @@ const SetComponent = ({
             <input
               className={`appearance-none block w-full text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500`}
               ref={inputChildNum}
+              data-testid="input"
               id="childNum"
               type="number"
               min={0}

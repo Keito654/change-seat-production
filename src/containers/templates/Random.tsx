@@ -4,16 +4,16 @@ import { useFetchData } from 'src/hooks/useFetchData';
 
 type Props = {
   testing: boolean;
-}
+};
 
-const CharRandomContainer = ({testing = false}: Props) => {
+const CharRandomContainer = ({ testing = false }: Props) => {
   const { settedPosition, childNum, position } = useFetchData();
   const [positiontest, setpositiontest] = useState(position);
 
   useEffect(() => {
     return setpositiontest(position);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [(testing ? '': position)]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [testing ? '' : position]);
 
   // 数字を渡し、それ以下の数値かつsettedTexにない数字全てで構成された配列を生成、順番をランダムにする
   // nullにはこの値を順番に渡していく
@@ -75,7 +75,12 @@ const CharRandomContainer = ({testing = false}: Props) => {
     [result],
   );
 
-  return <CharRandom handleRandom={() => testing ? result() :  handleRondom(positiontest)} position={positiontest} />;
+  return (
+    <CharRandom
+      handleRandom={() => (testing ? result() : handleRondom(positiontest))}
+      position={positiontest}
+    />
+  );
 };
 
 export default CharRandomContainer;
