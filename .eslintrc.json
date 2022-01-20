@@ -7,7 +7,16 @@
     "plugin:storybook/recommended",
     "prettier"
   ],
+  "plugins": ["prefer-arrow"],
   "rules": {
+    "prefer-arrow/prefer-arrow-functions": [
+      "error",
+      {
+        "disallowPrototype": true,
+        "singleReturnOnly": false,
+        "classPropertiesAllowed": false
+      }
+    ],
     // セミコロンない場合、エラー出力
     "semi": ["error", "always"],
     "import/order": [

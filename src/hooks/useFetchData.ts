@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthUserContext } from 'src/components/layout/AuthLayout';
 import { client } from 'src/libs/supabase';
 
-export function useFetchData() {
+export const useFetchData = () => {
   const [settedPosition, setSettedPosition] = useState<(number | null)[][]>([
     [],
   ]);
@@ -32,4 +32,4 @@ export function useFetchData() {
   }, [user_id]);
 
   return { ...{ settedPosition, childNum, position } };
-}
+};
