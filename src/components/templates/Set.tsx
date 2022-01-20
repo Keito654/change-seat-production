@@ -11,7 +11,10 @@ type Props = {
   HandleColumnAdd: () => void;
   HandleColumnDec: () => void;
   arrayNumProps: number;
-  handleSave: (position: (number | null)[][], childNum: number) => Promise<void>;
+  handleSave: (
+    position: (number | null)[][],
+    childNum: number,
+  ) => Promise<void>;
 };
 
 const SetComponent = ({
@@ -79,12 +82,20 @@ const SetComponent = ({
           <div className="mt-1 mx-3" id="numView">
             <div
               className={
-                position.length * position[0].length - notUseSeatNum - arrayNumProps >= 0
+                position.length * position[0].length -
+                  notUseSeatNum -
+                  arrayNumProps >=
+                0
                   ? 'text-blue-700'
                   : 'text-red-600'
               }
-            >{`現在の席数:${position.length * position[0].length - notUseSeatNum}　${
-              position.length * position[0].length - notUseSeatNum - arrayNumProps >= 0
+            >{`現在の席数:${
+              position.length * position[0].length - notUseSeatNum
+            }　${
+              position.length * position[0].length -
+                notUseSeatNum -
+                arrayNumProps >=
+              0
                 ? ''
                 : '席数が設定された人数を下回っています。'
             }`}</div>
@@ -152,12 +163,16 @@ const SetComponent = ({
         <Dialog.Overlay className="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
         <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
           <Dialog.Title
-            as="h3"
-            className="text-lg font-medium leading-6 text-gray-600 flex justify-center my-3"
+            as="h2"
+            className="text-lg font-semibold leading-6 text-gray-600 flex justify-center mb-5 mt-2"
           >
             生徒設定画面
           </Dialog.Title>
+          <div className="px-3 mb-2">{`${
+              place ? parseInt(place.split(',')[1]) + 1 : ''
+            }行目　${place ? parseInt(place.split(',')[0]) + 1 : ''}列目`}</div>
           <div className="flex justify-start space-x-3 px-3 mb-6">
+            
             <div>この席を使用する</div>
             <Switch
               checked={enabled}
