@@ -16,7 +16,7 @@ const Home: NextPage = () => {
     <Tab.Group manual>
       <div
         id="tabContent"
-        className="container mx-auto flex flex-col h-full w-full border border-gray-200 bg-white"
+        className="container mx-auto flex flex-col h-full w-full border border-gray-200 bg-white focus:outline-none"
       >
         <Tab.List className="mx-auto mb-5 flex space-x-5 p-1 w-full">
           <Tab
