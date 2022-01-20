@@ -6,12 +6,14 @@ type CharRandomProps = {
   handleRandom?: any;
   positionChange: (number | null)[][];
   handleReset: () => void;
+  drawing: boolean;
 };
 
 const CharRandom = ({
   handleRandom,
   positionChange,
   handleReset,
+  drawing,
 }: CharRandomProps) => {
   const transArray = useCallback((position: (number | null)[][]) => {
     return position.map((t, i) => {
@@ -49,7 +51,10 @@ const CharRandom = ({
         <div className="flex justify-center lg:space-x-10 space-x-4">
           <button
             type="button"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-40"
+            className={`bg-blue-500  text-white font-bold py-2 px-4 rounded w-40
+              ${drawing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700'}
+              `}
+            disabled={drawing}
             onClick={handleRandom}
           >
             {<PlayIcon className="h-5 w-5 inline mr-1.5" />}

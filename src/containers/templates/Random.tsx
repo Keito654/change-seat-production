@@ -9,6 +9,7 @@ type Props = {
 const CharRandomContainer = ({ testing = false }: Props) => {
   const { settedPosition, childNum, position } = useFetchData();
   const [positionChange, setPositionChange] = useState(position);
+  const [drawing, setDrawing] = useState(false);
 
   useEffect(() => {
     return setPositionChange(position);
@@ -50,6 +51,7 @@ const CharRandomContainer = ({ testing = false }: Props) => {
 
   const handleRondom = useCallback(
     (positionState: (number | null)[][]) => {
+      setDrawing(true);
       const randomPromise = () =>
         new Promise((resolve) => {
           let count = 0;
@@ -70,7 +72,9 @@ const CharRandomContainer = ({ testing = false }: Props) => {
           const interval = setInterval(randomNumber, 100);
         });
 
-      void randomPromise().then(result);
+      void randomPromise()
+        .then(result)
+        .then(() => setDrawing(false));
     },
     [result],
   );
@@ -80,6 +84,7 @@ const CharRandomContainer = ({ testing = false }: Props) => {
       handleRandom={() => (testing ? result() : handleRondom(positionChange))}
       handleReset={() => setPositionChange(position)}
       positionChange={positionChange}
+      drawing={drawing}
     />
   );
 };
