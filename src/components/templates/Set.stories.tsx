@@ -17,5 +17,4 @@ SetComponentPage.args = {
     [1, 1, 1],
   ],
   arrayNumProps: 1,
-  
 };

@@ -3,7 +3,10 @@ import Link from 'next/link';
 
 const Usage: NextPage = () => {
   return (
-    <div className="container mx-auto bg-white border border-gray-100 p-5" style={{ textAlign: 'center' }}>
+    <div
+      className="container mx-auto bg-white border border-gray-100 p-5"
+      style={{ textAlign: 'center' }}
+    >
       <p>
         一番下の「
         {

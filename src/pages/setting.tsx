@@ -14,7 +14,10 @@ const Home: NextPage = () => {
 
   return (
     <Tab.Group manual>
-      <div id="tabContent" className="container mx-auto flex flex-col h-full w-full border border-gray-200 bg-white">
+      <div
+        id="tabContent"
+        className="container mx-auto flex flex-col h-full w-full border border-gray-200 bg-white"
+      >
         <Tab.List className="mx-auto mb-5 flex space-x-5 p-1 w-full">
           <Tab
             className={({ selected }) => {
@@ -26,8 +29,8 @@ const Home: NextPage = () => {
             } w-full py-2.5 text-sm leading-5 font-medium rounded-lg px-4 shadow border`;
             }}
           >
-            {<UsersIcon className='h-5 w-5 inline mr-1.5' />}<span className='align-middle'>人数設定</span>
-            
+            {<UsersIcon className="h-5 w-5 inline mr-1.5" />}
+            <span className="align-middle">人数設定</span>
           </Tab>
           <Tab
             className={({ selected }) => {
@@ -39,8 +42,8 @@ const Home: NextPage = () => {
             } w-full py-2.5 text-sm leading-5 font-medium  rounded-lg px-4 shadow border`;
             }}
           >
-            {<LocationMarkerIcon className='h-5 w-5 inline mr-1.5' />}<span className='align-middle'>席設定</span>
-            
+            {<LocationMarkerIcon className="h-5 w-5 inline mr-1.5" />}
+            <span className="align-middle">席設定</span>
           </Tab>
         </Tab.List>
         <Tab.Panels className="flex-1">

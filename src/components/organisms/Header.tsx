@@ -58,8 +58,7 @@ export const Header = ({ user_id }: Props) => {
                   {<MenuIcon />}
                 </button>
               )
-            ) : (
-              width >= 1024 ?(
+            ) : width >= 1024 ? (
               <>
                 <Link href="/about">
                   <a className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-3 border border-gray-400 rounded-full text-xs ml-4">
@@ -68,15 +67,14 @@ export const Header = ({ user_id }: Props) => {
                   </a>
                 </Link>
               </>
-              ) :(
-                <button
-                  type="button"
-                  className="bg-gray-200 hover:bg-gray-300 text-black font-bold px-5  h-10 w-16 rounded"
-                  onClick={() => setOpen(true)}
-                >
-                  {<MenuIcon />}
-                </button>
-              )
+            ) : (
+              <button
+                type="button"
+                className="bg-gray-200 hover:bg-gray-300 text-black font-bold px-5  h-10 w-16 rounded"
+                onClick={() => setOpen(true)}
+              >
+                {<MenuIcon />}
+              </button>
             )}
           </div>
         </div>

@@ -8,7 +8,11 @@ type CharRandomProps = {
   handleReset: () => void;
 };
 
-const CharRandom = ({ handleRandom, positionChange, handleReset }: CharRandomProps) => {
+const CharRandom = ({
+  handleRandom,
+  positionChange,
+  handleReset,
+}: CharRandomProps) => {
   const transArray = useCallback((position: (number | null)[][]) => {
     return position.map((t, i) => {
       const seat = t.map((s, i) => (

@@ -3,7 +3,10 @@ import Link from 'next/link';
 
 const About: NextPage = () => {
   return (
-    <div className="container mx-auto bg-white border border-gray-100 p-5" style={{ textAlign: 'center' }}>
+    <div
+      className="container mx-auto bg-white border border-gray-100 p-5"
+      style={{ textAlign: 'center' }}
+    >
       <p>先生向けに作られた席替えアプリです。</p>
       <p>
         事前に配置を設定しておくと、ランダムで変化すると見せかけて先生が設定した席の配置を表示します。

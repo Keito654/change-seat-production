@@ -38,7 +38,7 @@ describe('ランダム画面のテスト', () => {
     });
   });
 
-  it('何も設定してないところにはランダムで設定されていない数字が入る', async() => {
+  it('何も設定してないところにはランダムで設定されていない数字が入る', async () => {
     mockFetch.mockImplementation(() => ({
       settedPosition: Array(2).fill(Array(3).fill(null)),
       childNum: 6,
@@ -52,6 +52,6 @@ describe('ランダム画面のテスト', () => {
     getAllByTestId('seat-element').map((element) => {
       arr.push(element.textContent);
     });
-    expect(arr).toEqual(expect.arrayContaining(["1","2","3","4","5","6"]));
+    expect(arr).toEqual(expect.arrayContaining(['1', '2', '3', '4', '5', '6']));
   });
 });

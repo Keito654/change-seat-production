@@ -169,10 +169,9 @@ const SetComponent = ({
             生徒設定画面
           </Dialog.Title>
           <div className="px-3 mb-2">{`${
-              place ? parseInt(place.split(',')[1]) + 1 : ''
-            }行目　${place ? parseInt(place.split(',')[0]) + 1 : ''}列目`}</div>
+            place ? parseInt(place.split(',')[1]) + 1 : ''
+          }行目　${place ? parseInt(place.split(',')[0]) + 1 : ''}列目`}</div>
           <div className="flex justify-start space-x-3 px-3 mb-6">
-            
             <div>この席を使用する</div>
             <Switch
               checked={enabled}
