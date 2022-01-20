@@ -15,7 +15,7 @@ export const CharRandomPage: ComponentStoryObj<typeof CharRandom> = {
         [1, 1, 1, 1],
       ],
     ) => {},
-    position: [
+    positionChange: [
       [1, 1, 1, 1],
       [1, 1, 1, 1],
       [1, 1, 1, 1],
