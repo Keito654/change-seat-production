@@ -8,10 +8,10 @@ type Props = {
 
 const CharRandomContainer = ({ testing = false }: Props) => {
   const { settedPosition, childNum, position } = useFetchData();
-  const [positiontest, setpositiontest] = useState(position);
+  const [positionChange, setPositionChange] = useState(position);
 
   useEffect(() => {
-    return setpositiontest(position);
+    return setPositionChange(position);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [testing ? '' : position]);
 
@@ -41,7 +41,7 @@ const CharRandomContainer = ({ testing = false }: Props) => {
         return two === null ? userRandomArr?.shift() : two;
       });
     });
-    setpositiontest(
+    setPositionChange(
       useArr.map((one) => {
         return one.map((two) => (two === undefined ? null : two));
       }),
@@ -58,7 +58,7 @@ const CharRandomContainer = ({ testing = false }: Props) => {
             const num = positionState.map((t) =>
               t.map((s) => (s === -1 ? s : Math.floor(Math.random() * 10))),
             );
-            setpositiontest(num);
+            setPositionChange(num);
             count += 1;
             if (count > 30) {
               // 30回変化したら終了
@@ -77,8 +77,9 @@ const CharRandomContainer = ({ testing = false }: Props) => {
 
   return (
     <CharRandom
-      handleRandom={() => (testing ? result() : handleRondom(positiontest))}
-      position={positiontest}
+      handleRandom={() => (testing ? result() : handleRondom(positionChange))}
+      handleReset={() => setPositionChange(position)}
+      positionChange={positionChange}
     />
   );
 };

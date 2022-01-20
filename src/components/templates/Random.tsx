@@ -4,10 +4,11 @@ import { useCallback } from 'react';
 
 type CharRandomProps = {
   handleRandom?: any;
-  position: (number | null)[][];
+  positionChange: (number | null)[][];
+  handleReset: () => void;
 };
 
-const CharRandom = ({ handleRandom, position }: CharRandomProps) => {
+const CharRandom = ({ handleRandom, positionChange, handleReset }: CharRandomProps) => {
   const transArray = useCallback((position: (number | null)[][]) => {
     return position.map((t, i) => {
       const seat = t.map((s, i) => (
@@ -29,7 +30,7 @@ const CharRandom = ({ handleRandom, position }: CharRandomProps) => {
     });
   }, []);
 
-  const ArrPosition = transArray(position);
+  const ArrPosition = transArray(positionChange);
 
   return (
     <div
@@ -41,16 +42,25 @@ const CharRandom = ({ handleRandom, position }: CharRandomProps) => {
       </div>
       <br />
       <div className="flex flex-col">
-        <button
-          type="button"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-40 mx-auto"
-          onClick={handleRandom}
-        >
-          {<PlayIcon className="h-5 w-5 inline mr-1.5" />}
-          <span className="align-middle">席替え開始！</span>
-        </button>
+        <div className="flex justify-center lg:space-x-10 space-x-4">
+          <button
+            type="button"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-40"
+            onClick={handleRandom}
+          >
+            {<PlayIcon className="h-5 w-5 inline mr-1.5" />}
+            <span className="align-middle">席替え開始！</span>
+          </button>
+          <button
+            type="button"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-40 "
+            onClick={handleReset}
+          >
+            リセット
+          </button>
+        </div>
         <Link href="/setting">
-          <a className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-3 border border-gray-400 rounded-full mt-4 w-40 mx-auto">
+          <a className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-3 border border-gray-400 rounded-full mt-4 w-auto mx-auto">
             {<CogIcon className="h-5 w-5 inline mr-1.5" />}
             <span className="align-middle">席の設定に移動</span>
           </a>
