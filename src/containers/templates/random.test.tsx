@@ -1,11 +1,11 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import React from 'react';
 import * as useFetchData from '../../hooks/useFetchData';
 import CharRandomContainer from 'src/containers/templates/Random';
 
 const mockFetch = jest.spyOn(useFetchData, 'useFetchData');
 
-describe('ランダムに画面が変化したあと設定した番号を表示する', () => {
+describe('ランダム画面のテスト', () => {
   afterEach(() => {
     mockFetch.mockReset();
     cleanup();
