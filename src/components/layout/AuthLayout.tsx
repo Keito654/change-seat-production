@@ -2,7 +2,8 @@ import { Auth } from '@supabase/ui';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { createContext } from 'react';
+import { createContext, useEffect, useState } from 'react';
+
 import { LayoutErrorBoundary } from 'src/components/layout/LayoutErrorBoundary';
 import { Footer } from 'src/components/organisms/Footer';
 import { Header } from 'src/components/organisms/Header';
@@ -15,7 +16,14 @@ type Props = {
 export const AuthUserContext = createContext<string | null>(null);
 
 export const AuthLayout = (props: Props) => {
-  const { user } = Auth.useUser();
+  const [user, setUser] = useState<any>(null);
+  useEffect(() => {
+    setUser(client.auth.session()?.user);
+
+    client.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user);
+    });
+  }, []);
   const router = useRouter();
 
   return (

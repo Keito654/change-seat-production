@@ -1,23 +1,10 @@
-import 'tailwindcss/tailwind.css';
 import { Auth } from '@supabase/ui';
 import type { AppProps } from 'next/app';
-import dynamic from 'next/dynamic';
+import { AuthLayout } from 'src/components/layout/AuthLayout';
 import { client } from 'src/libs/supabase';
+
 import 'src/styles/globals.css';
-
-type Props = {
-  children: React.ReactNode;
-};
-
-const AuthLayout = dynamic<Props>(
-  () =>
-    import('src/components/layout/AuthLayout').then(
-      (module) => module.AuthLayout,
-    ),
-  {
-    ssr: false,
-  },
-);
+import 'tailwindcss/tailwind.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
