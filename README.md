@@ -1,34 +1,16 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## このサイトについて
 
-First, run the development server:
+小学校の先生向けに作られた、席替えサイトです。
+一見ランダムに席を変更するサイトですが、あらがじめ設定しておくことで、ランダムに変化していると見せかけて指定した配置にすることが可能です。
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+子供に嘘をつくことが可能になるサイトですが、特に低学年のクラスでは平和な教室を維持するために必要となってくると考えています。
+ぜひ先生方に使用していただけたらと思います。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## セキュリティ面
+supabaseを使用した認証を行なっています。
+googleアカウントを用いた認証での利用を推奨しており、この方法でのログインは管理人である私にも情報が見えないようになっています。
+メールアドレスを用いた認証も用意していますが、こちらは管理人にはメールアドレスが見えます。パスワードは見えません。
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+席の配置を設定する際には出席番号を入力してもらうことを想定しており、設定画面でも数値以外を入力できないようにしています。
