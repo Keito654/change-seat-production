@@ -35,20 +35,18 @@ const SetComponent = ({
   const inputChildNum = useRef(null);
 
   const transArray = useCallback((position: (number | null)[][]) => {
-    return position.map((t, i) => {
-      const row = i;
-      const seat = t.map((s, i) => {
-        const col = i;
+    return position.map((row, rowNumber) => {
+      const seat = row.map((seatNum, colNumber) => {
         return (
           <div
             className={`${
-              s === -1 ? 'bg-black' : ''
+              seatNum === -1 ? 'bg-black' : ''
             } border border-gray-600 w-8 h-8`}
-            key={i}
+            key={colNumber}
             style={{ textAlign: 'center' }}
             data-testid="set-element"
-            data-place={`${row},${col}`}
-            data-value={s?.toString()}
+            data-place={`${rowNumber},${colNumber}`}
+            data-value={seatNum?.toString()}
             onClick={(e) => {
               setPlace(e.currentTarget.dataset.place);
               setInputValue(e.currentTarget.dataset.value);
@@ -56,12 +54,16 @@ const SetComponent = ({
               setEnabled(e.currentTarget.dataset.value === '-1' ? false : true);
             }}
           >
-            {s === -1 ? '' : s?.toString() ?? ''}
+            {seatNum === -1 ? '' : seatNum?.toString() ?? ''}
           </div>
         );
       });
       return (
-        <div className="space-y-2" id={'column' + i.toString()} key={i}>
+        <div
+          className="space-y-2"
+          id={'column' + rowNumber.toString()}
+          key={rowNumber}
+        >
           {seat}
         </div>
       );
