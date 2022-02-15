@@ -1,0 +1,18 @@
+@startuml dirStruct
+title ディレクトリ構成図
+
+salt
+
+{
+  {T
+    + src
+      ++ components 
+        +++   | xxxのaaaを格納する
+      ++ hooks
+      ++ libs
+      ++ pages
+      ++ styles
+  }
+}
+
+@enduml
