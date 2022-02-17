@@ -2,8 +2,8 @@ import { MenuIcon, LogoutIcon, SupportIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 import { useState } from 'react';
 import MenuList from 'src/components/organisms/Menu';
-import { getWindowSize } from 'src/libs/GetWindowSize';
 import { client } from 'src/libs/supabase';
+import { getWindowSize } from 'src/utils/GetWindowSize';
 
 type Props = {
   user_id: string | undefined;
