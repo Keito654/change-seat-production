@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import { client } from 'src/libs/supabase';
 
 const Registration = () => {
   const {

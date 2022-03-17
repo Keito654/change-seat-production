@@ -1,6 +1,8 @@
+import { Auth } from '@supabase/ui';
 import { useForm } from 'react-hook-form';
+import { client } from 'src/libs/supabase';
 
-const Auth = () => {
+const AuthPage = () => {
   const {
     register,
     handleSubmit,
@@ -13,7 +15,18 @@ const Auth = () => {
       style={{ textAlign: 'center' }}
       className="h-full flex flex-col bg-white border border-gray-100 container mx-auto my-auto p-2"
     >
-      <h1 className="text-2xl mb-5">ログイン</h1>
+      <h1 className="text-2xl mb-8">ログイン</h1>
+      <h2 className="mb-3 ">Googleアカウントでログイン</h2>
+      <div className="w-96 mb-5 mx-auto">
+        <Auth
+          onlyThirdPartyProviders={true}
+          supabaseClient={client}
+          providers={['google']}
+          socialColors={true}
+        />
+      </div>
+      <hr className="mb-5" />
+      <h2 className="mb-3 ">IDとパスワードでログイン</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           {...register('id', { required: true })}
@@ -47,4 +60,4 @@ const Auth = () => {
   );
 };
 
-export default Auth;
+export default AuthPage;
