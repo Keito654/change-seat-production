@@ -1,4 +1,5 @@
 import { Auth } from '@supabase/ui';
+import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { client } from 'src/libs/supabase';
 
@@ -50,11 +51,11 @@ const AuthPage = () => {
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 text-sm mt-10 mx-auto w-96 h-11 rounded-md"
         />
 
-        <input
-          type="submit"
-          value={'アカウントを作成'}
-          className=" hover:text-blue-700 hover:border-blue-700 text-blue-500 font-bold py-2 px-4 text-sm mt-10 mx-auto w-96 h-11 rounded-md border-blue-500 border-2"
-        />
+        <Link href={'/registration'}>
+          <a className=" hover:text-blue-700 hover:border-blue-700 text-blue-500 font-bold py-2 px-4 text-sm  mx-auto w-96 h-11 rounded-md border-blue-500 border-2 block mt-10">
+            アカウントを作成
+          </a>
+        </Link>
       </form>
     </div>
   );
