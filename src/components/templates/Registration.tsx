@@ -1,5 +1,7 @@
+import { ErrorMessage } from '@hookform/error-message';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
+import { checkExistUser } from 'src/utils/checkExistUser';
 
 type Props = {
   handleSignUp: (data: formModel) => Promise<void>;
@@ -28,17 +30,29 @@ const Registration = ({ handleSignUp }: Props) => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           {...register('id', {
-            required: 'ID(メールアドレス)を入力してください。',
+            required: '登録するメールアドレスを入力してください。',
             pattern: {
               value: /[\w\-._]+@[\w\-._]+\.[A-Za-z]+/,
               message: '正しいメールアドレスを入力してください。',
             },
+            validate: async (value) =>
+              checkExistUser(value) ||
+              'このメールアドレスは既に登録されています。',
           })}
           className={`appearance-none block  text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 w-96 mx-auto`}
           name="id"
-          placeholder={'ID/メールアドレス'}
+          placeholder={'メールアドレス'}
         />
-        {errors.id ? <span>IDを入力してください。</span> : <br />}
+        {errors.id ? (
+          <ErrorMessage
+            errors={errors}
+            name="id"
+            render={({ message }) => <p>{message}</p>}
+          />
+        ) : (
+          <br />
+        )}
+
         <input
           {...register('password', {
             required: true,
@@ -47,7 +61,7 @@ const Registration = ({ handleSignUp }: Props) => {
           className={`appearance-none block w-96 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-5 mx-auto`}
           type="password"
           name="password"
-          placeholder={'パスワード'}
+          placeholder={'パスワード(6文字以上)'}
         />
         {errors.password ? (
           <span>パスワードを6文字以上入力してください。</span>
