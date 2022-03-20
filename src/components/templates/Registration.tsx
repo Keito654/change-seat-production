@@ -35,7 +35,7 @@ const Registration = ({ handleSignUp }: Props) => {
               value: /[\w\-._]+@[\w\-._]+\.[A-Za-z]+/,
               message: '正しいメールアドレスを入力してください。',
             },
-            validate: async (value) =>
+            validate: async (value: string) =>
               checkExistUser(value) ||
               'このメールアドレスは既に登録されています。',
           })}

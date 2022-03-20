@@ -2,7 +2,7 @@ import { client } from 'src/libs/supabase';
 
 export const checkExistUser = async (id: string) => {
   const { data, error } = await client
-    .from('auth.users')
+    .from('users')
     .select('email')
     .eq('email', id);
 
