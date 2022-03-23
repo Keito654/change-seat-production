@@ -10,9 +10,10 @@ type formModel = {
 
 type Props = {
   handleLogin: (data: formModel) => Promise<void>;
+  failureMessage: string;
 };
 
-const AuthPage = ({ handleLogin }: Props) => {
+const AuthPage = ({ handleLogin, failureMessage }: Props) => {
   const {
     register,
     handleSubmit,
@@ -53,11 +54,15 @@ const AuthPage = ({ handleLogin }: Props) => {
           placeholder={'パスワード'}
         />
         {errors.password ? <span>パスワードを入力してください。</span> : <br />}
-
+        {failureMessage.length > 0 ? (
+          <span className="text-red-500 font-bold">{failureMessage}</span>
+        ) : (
+          <br />
+        )}
         <input
           type="submit"
           value={'ログイン'}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 text-sm mt-10 mx-auto w-full md:w-96 h-11 rounded-md"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 text-sm mt-6 mx-auto w-full md:w-96 h-11 rounded-md"
         />
 
         <Link href={'/registration'}>
