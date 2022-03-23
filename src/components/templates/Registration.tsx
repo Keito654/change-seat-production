@@ -35,8 +35,8 @@ const Registration = ({ handleSignUp }: Props) => {
               value: /[\w\-._]+@[\w\-._]+\.[A-Za-z]+/,
               message: '正しいメールアドレスを入力してください。',
             },
-            validate: async (value: string) =>
-              checkExistUser(value) ||
+            validate: async (value) =>
+              (await checkExistUser(value)) ||
               'このメールアドレスは既に登録されています。',
           })}
           className={`appearance-none block  text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 w-96 mx-auto`}
@@ -76,7 +76,7 @@ const Registration = ({ handleSignUp }: Props) => {
         />
 
         <Link href={'/'}>
-          <a className=" hover:text-gray-700 hover:border-gray-700 text-gray-500 font-bold py-2 px-4 text-sm mt-10 mx-auto w-96 h-11 rounded-md border-gray-500 border-2 block">
+          <a className=" hover:text-gray-700 hover:border-gray-700 text-gray-500 font-bold py-2 px-4 text-sm mt-10 mx-auto w-96 h-11 rounded-md border-gray-500 border-2 block mb-5">
             キャンセル
           </a>
         </Link>

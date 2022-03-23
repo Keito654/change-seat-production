@@ -3,13 +3,22 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { client } from 'src/libs/supabase';
 
-const AuthPage = () => {
+type formModel = {
+  id: string;
+  password: string;
+};
+
+type Props = {
+  handleLogin: (data: formModel) => Promise<void>;
+};
+
+const AuthPage = ({ handleLogin }: Props) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data: any) => console.log(data);
+  const onSubmit = (data: any) => handleLogin(data);
 
   return (
     <div

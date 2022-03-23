@@ -8,7 +8,7 @@ export const checkExistUser = async (id: string) => {
 
   if (error) console.log(error);
 
-  if (data?.length !== 0 && data !== null) return true;
+  if (data?.length !== 0 && data !== null) return false;
 
-  return false;
+  return true;
 };
