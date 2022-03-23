@@ -54,7 +54,7 @@ const AuthPage = ({ handleLogin, failureMessage }: Props) => {
           placeholder={'パスワード'}
         />
         {errors.password ? <span>パスワードを入力してください。</span> : <br />}
-        {failureMessage.length > 0 ? (
+        {failureMessage !== '' ? (
           <span className="text-red-500 font-bold">{failureMessage}</span>
         ) : (
           <br />

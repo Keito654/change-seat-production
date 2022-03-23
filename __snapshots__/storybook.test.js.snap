@@ -16,7 +16,7 @@ exports[`Storyshots Auth/Auth Auth Page 1`] = `
     Googleアカウントでログイン
   </h2>
   <div
-    class="w-96 mb-5 mx-auto"
+    class="w-full md:w-96 mb-5 mx-auto"
   >
     <div
       class="sbui-auth"
@@ -83,25 +83,28 @@ exports[`Storyshots Auth/Auth Auth Page 1`] = `
   </h2>
   <form>
     <input
-      class="appearance-none block  text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 w-96 mx-auto"
+      class="appearance-none block  text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 w-full md:w-96 mx-auto"
       name="id"
       placeholder="ID/メールアドレス"
     />
     <br />
     <input
-      class="appearance-none block w-96 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-5 mx-auto"
+      class="appearance-none block text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-5 mx-auto w-full md:w-96"
       name="password"
       placeholder="パスワード"
       type="password"
     />
     <br />
+    <span
+      class="text-red-500 font-bold"
+    />
     <input
-      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 text-sm mt-10 mx-auto w-96 h-11 rounded-md"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 text-sm mt-6 mx-auto w-full md:w-96 h-11 rounded-md"
       type="submit"
       value="ログイン"
     />
     <a
-      class=" hover:text-blue-700 hover:border-blue-700 text-blue-500 font-bold py-2 px-4 text-sm mx-auto w-96 h-11 rounded-md border-blue-500 border-2 block mt-10"
+      class=" hover:text-blue-700 hover:border-blue-700 text-blue-500 font-bold py-2 px-4 text-sm mx-auto w-full md:w-96 h-11 rounded-md border-blue-500 border-2 block mt-10"
       href="/registration"
     >
       アカウントを作成
@@ -122,25 +125,25 @@ exports[`Storyshots Auth/Registration Registration Page 1`] = `
   </h1>
   <form>
     <input
-      class="appearance-none block  text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 w-96 mx-auto"
+      class="appearance-none block  text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 w-full md:w-96 mx-auto"
       name="id"
       placeholder="メールアドレス"
     />
     <br />
     <input
-      class="appearance-none block w-96 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-5 mx-auto"
+      class="appearance-none block w-full md:w-96 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-5 mx-auto"
       name="password"
       placeholder="パスワード(6文字以上)"
       type="password"
     />
     <br />
     <input
-      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 text-sm mt-10 mx-auto w-96 h-11 rounded-md"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 text-sm mt-10 mx-auto w-full md:w-96 h-11 rounded-md"
       type="submit"
       value="作成"
     />
     <a
-      class=" hover:text-gray-700 hover:border-gray-700 text-gray-500 font-bold py-2 px-4 text-sm mt-10 mx-auto w-96 h-11 rounded-md border-gray-500 border-2 block mb-5"
+      class=" hover:text-gray-700 hover:border-gray-700 text-gray-500 font-bold py-2 px-4 text-sm mt-10 mx-auto w-full md:w-96 h-11 rounded-md border-gray-500 border-2 block mb-5"
       href="/"
     >
       キャンセル
