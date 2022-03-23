@@ -20,6 +20,7 @@ salt
       ++ hooks | hooks 依存なし
       ++ api | supabaseと通信するロジックを書く
       ++ utils | ユーティリティ系
+      ++ libs
       ++ pages
         +++ _app.tsx 
         +++ _document.tsx 

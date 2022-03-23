@@ -7,6 +7,7 @@ import { createContext, useEffect, useState } from 'react';
 import { LayoutErrorBoundary } from 'src/components/layout/LayoutErrorBoundary';
 import { Footer } from 'src/components/organisms/Footer';
 import { Header } from 'src/components/organisms/Header';
+import AuthContainer from 'src/containers/templates/Auth';
 import { client } from 'src/libs/supabase';
 
 type Props = {
@@ -36,29 +37,17 @@ export const AuthLayout = (props: Props) => {
         <main className="px-4 text-gray-600 flex-1 ">
           <LayoutErrorBoundary>
             {user ? (
+              // ユーザー情報がある場合
               <AuthUserContext.Provider value={user?.id}>
                 {props.children}
               </AuthUserContext.Provider>
-            ) : router.pathname === '/usage' || router.pathname === '/about' ? (
+            ) : // ユーザー情報がない場合
+            ['/about', '/usage', '/registration'].includes(router.pathname) ? (
+              // 匿名ユーザーでも許可するページであった場合
               <div>{props.children}</div>
             ) : (
-              <div className="flex justify-center bg-white container mx-auto p-5 border border-gray-100">
-                <div className="w-full sm:w-96">
-                  <div className="flex justify-center">
-                    <Link href="/usage">
-                      <a className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-3 border border-gray-400 rounded-full text-sm mb-3">
-                        Eメールでの登録の仕方
-                      </a>
-                    </Link>
-                  </div>
-
-                  <Auth
-                    supabaseClient={client}
-                    providers={['google']}
-                    socialColors={true}
-                  />
-                </div>
-              </div>
+              // 匿名ユーザーを許可しない場合
+              <AuthContainer />
             )}
           </LayoutErrorBoundary>
         </main>

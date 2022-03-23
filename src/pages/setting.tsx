@@ -5,7 +5,7 @@ import { useCallback, useState } from 'react';
 import SetChildNum from 'src/components/organisms/SetChildNum';
 import SetContainer from 'src/containers/templates/Set';
 
-const Home: NextPage = () => {
+const Set: NextPage = () => {
   const [childNumState, setChildNumState] = useState<string | undefined>();
 
   const setValue = useCallback((value: string | undefined) => {
@@ -63,4 +63,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Set;
