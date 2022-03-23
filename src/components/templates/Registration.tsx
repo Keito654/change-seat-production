@@ -39,7 +39,7 @@ const Registration = ({ handleSignUp }: Props) => {
               (await checkExistUser(value)) ||
               'このメールアドレスは既に登録されています。',
           })}
-          className={`appearance-none block  text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 w-96 mx-auto`}
+          className={`appearance-none block  text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 w-full md:w-96 mx-auto`}
           name="id"
           placeholder={'メールアドレス'}
         />
@@ -58,7 +58,7 @@ const Registration = ({ handleSignUp }: Props) => {
             required: true,
             minLength: 6,
           })}
-          className={`appearance-none block w-96 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-5 mx-auto`}
+          className={`appearance-none block w-full md:w-96 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-5 mx-auto`}
           type="password"
           name="password"
           placeholder={'パスワード(6文字以上)'}
@@ -72,11 +72,11 @@ const Registration = ({ handleSignUp }: Props) => {
         <input
           type="submit"
           value={'作成'}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 text-sm mt-10 mx-auto w-96 h-11 rounded-md"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 text-sm mt-10 mx-auto w-full md:w-96 h-11 rounded-md"
         />
 
         <Link href={'/'}>
-          <a className=" hover:text-gray-700 hover:border-gray-700 text-gray-500 font-bold py-2 px-4 text-sm mt-10 mx-auto w-96 h-11 rounded-md border-gray-500 border-2 block mb-5">
+          <a className=" hover:text-gray-700 hover:border-gray-700 text-gray-500 font-bold py-2 px-4 text-sm mt-10 mx-auto w-full md:w-96 h-11 rounded-md border-gray-500 border-2 block mb-5">
             キャンセル
           </a>
         </Link>

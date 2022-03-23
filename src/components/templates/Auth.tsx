@@ -27,7 +27,7 @@ const AuthPage = ({ handleLogin }: Props) => {
     >
       <h1 className="text-2xl mb-8">ログイン</h1>
       <h2 className="mb-3 ">Googleアカウントでログイン</h2>
-      <div className="w-96 mb-5 mx-auto">
+      <div className="w-full md:w-96 mb-5 mx-auto">
         <Auth
           onlyThirdPartyProviders={true}
           supabaseClient={client}
@@ -40,14 +40,14 @@ const AuthPage = ({ handleLogin }: Props) => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           {...register('id', { required: true })}
-          className={`appearance-none block  text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 w-96 mx-auto`}
+          className={`appearance-none block  text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 w-full md:w-96 mx-auto`}
           name="id"
           placeholder={'ID/メールアドレス'}
         />
         {errors.id ? <span>IDを入力してください。</span> : <br />}
         <input
           {...register('password', { required: true })}
-          className={`appearance-none block w-96 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-5 mx-auto`}
+          className={`appearance-none block text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-5 mx-auto w-full md:w-96`}
           type="password"
           name="password"
           placeholder={'パスワード'}
@@ -57,11 +57,11 @@ const AuthPage = ({ handleLogin }: Props) => {
         <input
           type="submit"
           value={'ログイン'}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 text-sm mt-10 mx-auto w-96 h-11 rounded-md"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 text-sm mt-10 mx-auto w-full md:w-96 h-11 rounded-md"
         />
 
         <Link href={'/registration'}>
-          <a className=" hover:text-blue-700 hover:border-blue-700 text-blue-500 font-bold py-2 px-4 text-sm  mx-auto w-96 h-11 rounded-md border-blue-500 border-2 block mt-10">
+          <a className=" hover:text-blue-700 hover:border-blue-700 text-blue-500 font-bold py-2 px-4 text-sm  mx-auto w-full md:w-96 h-11 rounded-md border-blue-500 border-2 block mt-10">
             アカウントを作成
           </a>
         </Link>
